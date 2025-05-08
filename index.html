@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce | Authentication</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+  </div>
+  
+  <div class="auth-container">
+    <div class="auth-grid">
+      <div class="auth-hero">
+        
+        
+      </div>
+
+      <div class="auth-content">
+        <div class="auth-form-container">
+         
+          <form class="auth-form" id="login-in">
+            <div class="auth-header">
+              <h1 class="auth-title">SignIn</h1>
+              
+            </div>
+            <div id="login-error" class="form-message error" style="display: none;"></div>
+            
+            <div class="form-group">
+              <i class="fas fa-envelope form-icon"></i>
+              <input type="text" id="login-username" placeholder="Email or username" class="form-input" required>
+              <div id="login-username-error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+              <i class="fas fa-lock form-icon"></i>
+              <input type="password" id="login-password" placeholder="Password" class="form-input" required>
+              <i class="fas fa-eye password-toggle" id="toggle-login-password"></i>
+              <div id="login-password-error" class="error-message"></div>
+            </div>
+            
+            <div class="form-actions">
+              <label class="remember-me">
+                <input type="checkbox" id="remember-me"> Remember me
+              </label>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block" id="login-btn">
+              <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+            
+            <div class="divider">
+              <div class="divider-text">OR</div>
+            </div>
+            
+            <div class="social-auth">
+              <button type="button" class="social-btn">
+                <i class="fab fa-google" style="color: #DB4437;"></i>
+              </button>
+              <button type="button" class="social-btn">
+                <i class="fab fa-apple"></i>
+              </button>
+              <button type="button" class="social-btn">
+                <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
+              </button>
+            </div>
+            
+            <div class="auth-footer">
+              Don't have an account? <a href="#" class="auth-link" id="sign-up">Sign up</a>
+            </div>
+          </form>
+
+          <form class="auth-form" id="login-up" style="display: none;">
+            <div class="auth-header">
+              <h1 class="auth-title">Create Account</h1>
+              <p class="auth-subtitle">Join our community today</p>
+            </div>
+            
+            <div id="signup-error" class="form-message error" style="display: none;"></div>
+            <div id="signup-success" class="form-message success" style="display: none;"></div>
+            
+            <div class="form-group">
+              <i class="fas fa-user form-icon"></i>
+              <input type="text" id="signup-username" placeholder="Username" class="form-input" required>
+              <div id="signup-username-error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+              <i class="fas fa-envelope form-icon"></i>
+              <input type="email" id="signup-email" placeholder="Email address" class="form-input" required>
+              <div id="signup-email-error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+              <i class="fas fa-lock form-icon"></i>
+              <input type="password" id="signup-password" placeholder="Password" class="form-input" required>
+              <i class="fas fa-eye password-toggle" id="toggle-signup-password"></i>
+              <div id="signup-password-error" class="error-message"></div>
+            </div>
+            
+            <div class="form-group">
+              <i class="fas fa-lock form-icon"></i>
+              <input type="password" id="signup-password-confirm" placeholder="Confirm password" class="form-input" required>
+              <div id="signup-confirm-error" class="error-message"></div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block" id="signup-btn">
+              <i class="fas fa-user-plus"></i> Create Account
+            </button>
+            
+            <div class="auth-footer">
+              Already have an account? <a href="#" class="auth-link" id="sign-in">Sign in</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js">
+  </script>
+</body>
+</html>

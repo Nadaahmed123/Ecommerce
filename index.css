@@ -1,0 +1,370 @@
+
+:root {
+  --primary: #510202;
+--primary-light: #940404;
+--primary-dark: #290101;
+--secondary: #6b7280;
+--success: #10b981;
+--danger: #ef4444;
+--warning: #f59e0b;
+--light: #f9fafb;
+--dark: #111827;
+--error:var(--danger);
+--gray: #9ca3af;
+--light-gray: #e5e7eb;
+
+
+
+
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f1f5f9;
+  color: var(--dark);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  background-color: var(--light);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.auth-container {
+  display: none;
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 700px;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.auth-hero {
+   background: linear-gradient(135deg, var(--primary) 0%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://media.istockphoto.com/id/1460445953/photo/fashionable-woman-doing-online-shopping.jpg?s=2048x2048&w=is&k=20&c=p_s-eWdjIz5v00W9lZmK9-khO-MQyZO_p1ALKrFnDic=') center/cover no-repeat;
+  opacity: 0.15;
+}
+
+
+
+
+.auth-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.auth-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--darker);
+  margin-bottom: 0.75rem;
+}
+
+.auth-subtitle {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  transition: var(--transition);
+  background-color: white;
+  margin: .5rem 0px;
+  
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--gray);
+  opacity: 0.7;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.remember-me input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary);
+}
+
+.forgot-password {
+  font-size: 0.875rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--light-gray);
+}
+
+.divider-text {
+  padding: 0 1rem;
+}
+
+.social-auth {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.social-btn:hover {
+  background-color: #f8fafc;
+}
+
+.social-btn i {
+  font-size: 1.25rem;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--gray);
+}
+
+.auth-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.success-message {
+  color: var(--success);
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form-message {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+}
+
+.error {
+  color: var(--error);
+}
+
+.success {
+  color: var(--success);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .auth-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .auth-hero {
+    display: none;
+  }
+  
+  .auth-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-content {
+    padding: 1.5rem;
+  }
+  
+  .social-auth {
+    flex-direction: column;
+  }
+}
